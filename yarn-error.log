@@ -1,0 +1,73 @@
+Arguments: 
+  /usr/local/Cellar/node@8/8.12.0/bin/node /usr/local/bin/yarn add
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.12.1
+
+Node version: 
+  8.12.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/pzafonte/Mern-Chat/package.json: Unexpected token / in JSON at position 504
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1166:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:92:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:103:13
+      at <anonymous>
+
+npm manifest: 
+  {
+    "name": "simple-chat",
+    "version": "1.0.0",
+    "description": "simple chat app",
+    "main": "server.js",
+    "scripts": {
+      "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+      "start:prod": "node server.js",
+      "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+      "client": "cd client && npm run start",
+      "install": "cd client && yarn install",
+      "build": "cd client && npm run build",
+      "heroku-postbuild": "npm run build"
+      // "client-install": "npm install --prefix client",
+      // "start": "node server.js",
+      // "server": "nodemon server.js",
+      // "client": "npm start --prefix client",
+      // "dev": "concurrently \"npm run server\" \"npm run client\"",
+      // "build": "cd client && npm run build",
+      // "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/pzafonte/simple-chat.git"
+    },
+    "author": "Peter Zafonte",
+    "license": "MIT License",
+    "bugs": {
+      "url": "https://github.com/pzafonte/simple-chat/issues"
+    },
+    "homepage": "https://github.com/pzafonte/simple-chat#readme",
+    "dependencies": {
+      "body-parser": "^1.18.3",
+      "concurrently": "^4.0.1",
+      "express": "^4.16.4",
+      "mongoose": "^5.3.11",
+      "socket.io": "^2.1.1"
+    },
+    "devDependencies": {
+      "nodemon": "^1.18.6"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
