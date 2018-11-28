@@ -17,7 +17,7 @@ export default class Chat extends Component {
                 
             ],
         }
-        this.socket = io('arcane-earth-21791.herokuapp.com');
+        this.socket = io('localhost:3001');
 
         this.socket.on('RECEIVE_MESSAGE', function(data){
             recieveMessage(data);
