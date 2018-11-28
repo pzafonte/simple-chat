@@ -1,5 +1,3 @@
-
-
 #SIMPLE CHAT
 
 ## Technologies
